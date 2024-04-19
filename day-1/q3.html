@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Target value in an array.</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let arr=[1,2,3,4,5,6,7,8]
+    target=5;
+
+  function del(arr){
+    let index=arr.indexOf(target);
+        if(index>-1){
+            arr.splice(index,1);
+        }
+        console.log(arr);
+  }
+del(arr)   
+</script>
