@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    
+function  main(value){
+this.value = value;
+this.next=null;
+}
+
+const s1= new main(1);
+const s2= new main(2);
+const s3= new main(4);
+const s4=new main(5);
+const s5=new main (6);
+const s6=new main(7);
+const s7= new main(8);
+const s8=new main(9);
+const s9= new main(10);
+
+
+s1.next=s2;
+s2.next=s3;
+s3.next=s4;
+s4.next=s5;
+s5.next=s6;
+s6.next=s7;
+s7.next=s8;
+s8.next=s9;
+s9.next=null;
+
+let curr=s1;
+while(curr!=null){
+    console.log(curr.value);
+    curr=curr.next;
+}
+
+</script>

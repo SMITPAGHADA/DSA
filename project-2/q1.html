@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<Script>
+    function init(value){
+        this.value = value;
+        this.next=null
+    }
+
+    const f1=new init (1)
+    const f2=new init (3)
+    const f3=new init (5)
+
+    f1.next=f2;
+    f2.next=f3;
+  
+  function data(value){
+    this.value=value;
+    this.next=null
+  }
+
+  let n1=new data(2)
+  let n2=new data(4)
+  let n3=new data(6)
+
+
+  n1.next=n2;
+  n2.next=n3;
+
+ 
+  let first=f1
+
+
+  let sec=n1
+
+while(sec!=null){
+
+  console.log(first.value)
+  
+console.log(sec.value)
+first=first.next
+sec=sec.next
+}
+
+
+
+</Script>

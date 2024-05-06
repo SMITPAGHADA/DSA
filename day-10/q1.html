@@ -1,0 +1,46 @@
+<!-- Q1. Find if LinkedList is palindrome -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    function data(value){
+       
+        this.value=value;
+        this.next=null;
+    }
+    
+    const n1=new data("k")
+    const n2=new data ("a")
+    const n3=new data ("n")
+    const n4=new data ("a")
+    const n5=new data ("k")
+
+    n1.next=n2
+    n2.next=n3
+    n3.next=n4
+    n4.next=n5
+
+
+    function palindrome(head){
+
+        let curr=head
+        let arr=[]
+
+        while(curr!=null){
+            arr.push(curr.value)
+            curr=curr.next
+        }
+        return arr.join('')===arr.reverse().join('')
+    }
+    console.log(palindrome(n1))
+</script>
+

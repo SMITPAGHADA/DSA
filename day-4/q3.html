@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    function data(main){
+    
+     for(let i=0;i<main.length;i++){
+
+for(let j=0;(j<main.length-1-j);j++){
+
+
+    if(main[j]<main[j+1]){
+ 
+
+        let temp=main[j+1];
+        main[j+1]=main[j];
+        main[j]=temp;
+    }
+}
+     }
+console.log(main);
+
+    }
+    let  main =[6,5,1,3,4,7,11]
+    data(main)
+
+
+
+</script>

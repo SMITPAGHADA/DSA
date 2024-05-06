@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    function data(value){
+
+        this.value=value
+        this.next=value
+    }
+
+    const f1=new data(1)
+    const f2=new data(2)
+    const f3=new data(3)
+    const f4=new data(4)
+    const f5=new data(5)
+
+    f1.next=f2
+    f2.next=f3
+    f3.next=f5
+    
+
+
+    let curr=f1
+
+    while(curr.next!=null){
+        console.log(curr.value)
+        curr=curr.next
+    }
+
+</script>

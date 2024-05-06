@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PR-1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<style>
+input::placeholder{
+    padding-left: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, td, th {
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+ 
+}
+
+th {
+    background-color: #008080;
+    color:white;
+}
+
+table tr:nth-child(even) {
+  background-color: #9a9a9a;
+}
+</style>
+<body>
+    <div id="main" class="bg-[rgb(248,246,246)] h-[100vh]">
+
+        <div id="header" class="h-20 w-[100%] border border-black">
+            <ul class="flex justify-evenly mt-7 font-extrabold text-[30px]">
+                <li><a href="" class="text-[rgb(0,128,128)] hover:text-black ">Home</a></li>
+                <li><a href="" class="text-[rgb(0,128,128)] hover:text-black ">Applied Jobs</a></li>
+                <li><a href="" class="text-[rgb(0,128,128)] hover:text-black ">Bookmarks</a></li>
+            </ul>
+        </div>
+
+        <form class="bg-white border border-transparent rounded-[20px] h-[40%] w-[30%] ms-[35%] mt-[5%]  text-center flex-wrap">
+          
+            <h1 class="text-[30px] mt-3 mb-3">Enter Your Application Details</h1>
+          
+            <input id="name" type="text" placeholder="Enter Your Name" class="border border-black rounded-[10px] p-2  mt-3"> <br>
+          
+            <input id="email" type="email" placeholder="Enter Your Email" class="border border-black rounded-[10px] p-2 mt-3"> <br>
+          
+            <select name="" id="job" class="mt-3 me-[80px] border border-black p-2 bg-white rounded-[10px]">
+          
+            <option value="">select your category</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Beckend">Beckend</option>
+            <option value="Full-Stack">Full-Stack</option>
+            <option value="Ui-Ux">Ui-Ux</option>
+            <option value="Graphic-Designer">Graphic-Designer</option>
+
+           </select> <br>
+          
+           <input id="salary" type="number" placeholder="Enter Your Expected Salary" class="border border-black rounded-[10px] p-2 mt-3"> <br>
+          
+           <button id="clicking" onclick="submitform()" class="mt-5 border  border-black p-2 rounded-[20px] px-10 hover:bg-[rgb(0,128,128)] hover:text-white hover:border-0">Submit</button>
+        </form>
+
+        <div id="so" class="h-[70px] border border-transparent">
+            <select name="" id="sort" class="ms-[50px] bg-[gray] p-[10px]">
+<option value="sorting">sorted by</option>
+<option value="Sort By Names">Sort By Names</option>
+<option value="Sort By salary">Sort By salary</option>
+<option value="Sort By role">Sort By role</option>
+            </select>
+        </div>
+
+        <div id="display" class="border border-black w-[80%] ms-[10%] mt-2">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Job Applied </th>
+                    <th>Salary Expected</th>
+                    <th>Bookmark</th>
+                </tr>
+                <tbody id="table-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    
+    function submitform(){
+
+      event.preventDefault();
+    
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let job = document.getElementById("job").value;
+        let salary = document.getElementById("salary").value;
+        
+        let tr = document.createElement("tr");
+        let td1 = document.createElement("td");
+        let td2 = document.createElement("td");
+        let td3 = document.createElement("td");
+        let td4 = document.createElement("td");
+        let td5 = document.createElement("td");
+
+        td1.innerHTML = name;
+        td2.innerHTML = email;
+        td3.innerHTML = job;
+        td4.innerHTML = salary;
+        td5.innerHTML = `<button id="bookmark-btn" class="p-2 px-10 hover:bg-[rgb(0,128,128)] hover:text-white hover:border-0"> Bookmark</button>`;
+
+        tr.append(td1,td2,td3,td4,td5);
+
+        document.getElementById("table-body").append(tr);
+
+        let sorts=document.getElementById("sort")
+    sorts.addEventListener("change",function(){
+        document.getElementById("table-body").innerHTML=""
+
+        let value=sorts.value
+        let selected=[]
+
+        if(value === "Sort By salary"){
+            selected=tr.slice().sort((a,b)=>a.salary-b.salary)
+        }
+        else if(value === "Sort By Names"){
+            selected=tr.slice().sort((a,b)=>a.name.localeCompare(b.name))
+        }
+        display(selected)
+    })            
+    }
+</script>
