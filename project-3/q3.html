@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    function create(start, end, target, nums) {
+
+
+        if (start > end) {
+            return start;
+        }
+
+        let middle = Math.round((start + end) / 2)
+        if (nums[middle] === target) {
+            return middle
+        }
+
+        if (nums[middle] < target) {
+            return create(middle + 1, end, target, nums)
+        } else {
+            return create(start, middle - 1, target, nums)
+        }
+
+
+    }
+    let nums = [1, 3, 5, 6]
+    console.log(create(0, nums.length - 1, 7, nums))
+</script>

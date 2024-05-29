@@ -1,0 +1,52 @@
+<!-- sing stack perform operations of queue. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+  
+  class Queue{
+   
+       constructor(){
+        this.arr=[];
+        this.arr1=[];
+       }
+
+       push(el){
+         this.arr.push(el);
+       }
+       pop(){
+        while(this.arr.length !=0){
+         this.arr1.push(this.arr.pop());
+        }
+
+let ans=this.arr1.pop()
+        while(this.arr1.length !=0){
+       this.arr.push(this.arr1.pop());
+        }
+return ans;
+       }
+    
+      
+       
+    }
+ let q=new Queue;
+ q.push(1)
+ q.push(2)
+ q.push(3)
+ q.push(4)
+
+// console.log(q.pop());
+console.log(q);
+console.log(q.pop())
+</script>
+
+ 

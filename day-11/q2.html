@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+
+    let name = "kana"
+    let start = 0
+    let end = name.length - 1
+    let ips = true
+   
+    function palindrome(name) {
+       
+        while(start < end) {
+        
+            if (name[start] === name[end]) {
+
+                // let temp = start
+                // start = end
+                // end = temp
+
+                start++
+                end--
+                ips = true
+                
+            } else {
+                ips = false
+                break;
+            }
+        } 
+        return ips
+    }
+    console.log(palindrome(name))
+
+
+</script>

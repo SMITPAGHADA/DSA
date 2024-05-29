@@ -1,0 +1,55 @@
+
+<!-- Create a class Queue perform following operation :
+
+1.enquue
+2.dequeue
+3. size
+4.isEmpty
+5.front -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    class Queue{
+        constructor(){
+            this.arr = [];
+        }
+        enqueue(data){
+            this.arr.push(data);
+        }
+        dequeue(){
+            return this.arr.shift();
+        }
+        size(){
+            return this.arr.length;
+        }
+        isEmpty(){
+            return this.arr.length === 0;
+        }
+        front(){
+            return this.arr[0];
+        }
+    }
+    let q = new Queue();
+    q.enqueue(10);
+    q.enqueue(20);
+    q.enqueue(30);
+    q.enqueue(40);
+    q.enqueue(50);
+    console.log(q.size());
+    console.log(q.isEmpty());
+    console.log(q.front());
+    console.log(q.dequeue());
+    console.log(q.dequeue());
+    console.log(q.dequeue());
+</script>
